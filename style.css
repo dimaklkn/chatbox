@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #2f2d3f;
+  display: grid;
+  place-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.625rem;
+  color: white;
+}
+
+a {
+  color: red;
+  cursor: pointer;
+}
+
+/* Chat Styles */
+
+.chat {
+  display: grid;
+  gap: 1rem;
+}
+
+/* SUPPORT AVATARS */
+
+.chat__window {
+  background: hsl(246, 20%, 19%);
+  width: 280px;
+  height: 400px;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-rows: 1fr 4fr 2fr;
+
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1em 0.01em hsl(0, 0%, 0%);
+}
+
+.chat__support {
+  background: hsl(0, 100%, 71%);
+  display: flex;
+  padding: 0.6rem;
+}
+
+.chat__avatars {
+  width: 35%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+  align-items: center;
+}
+
+.chat__avatar-container {
+  position: absolute;
+}
+
+.chat__avatar-1 {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.chat__avatar-2 {
+  grid-column: 4 / 9;
+  grid-row: 1;
+  z-index: 0;
+}
+
+.chat__avatar-3 {
+  grid-column: 7 / 12;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.chat__avatar {
+  height: 30px;
+  aspect-ratio: 1/1;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.chat__info {
+  color: white;
+}
+
+.chat__info-names {
+  font-size: 0.875rem;
+}
+
+.chat__conversation {
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+
+  overflow: hidden;
+}
+
+.chat__conversation-message {
+  position: relative;
+  background-color: hsl(246, 15%, 26%);
+  height: fit-content;
+  padding: 1rem;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.chat__conversation-message::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: hsl(246, 15%, 26%);
+  transform: rotate(45deg);
+  left: -3px;
+  top: 9px;
+}
+
+.chat__agreement {
+  background-color: hsl(246, 15%, 26%);
+  padding: 1.5rem 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.chat__agreement button {
+  padding: 0.5rem 1.5rem;
+  width: fit-content;
+  color: red;
+  background-color: transparent;
+  border: 1px solid red;
+  border-radius: 100vh;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.chat__agreement button:hover {
+  color: white;
+  border: 1px solid hsl(0, 100%, 71%);
+  background-color: hsl(0, 100%, 71%);
+}
+
+.chat__closing-container {
+  display: flex;
+  justify-content: right;
+}
+
+.chat__closing {
+  position: relative;
+  width: 3rem;
+  aspect-ratio: 1 / 1;
+  background: hsl(0, 100%, 71%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.chat__closing::before {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 2px;
+  height: 1rem;
+  transform: translateX(1.4rem) translateY(1rem) rotate(45deg);
+}
+
+.chat__closing::after {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 2px;
+  height: 1rem;
+  transform: translateX(1.4rem) translateY(1rem) rotate(-45deg);
+}
